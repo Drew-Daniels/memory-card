@@ -1,13 +1,18 @@
-import Header from './components/Header';
-import Card from './components/Card';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import UI from './components/UI/UI';
+import Footer from './components/Footer/Footer';
+
+import './Reset.css'
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      {/* Cards here */}
-      <Footer />
+    <div className='App content-container'>
+      <div className='content'>
+        <Header/>
+        <UI />
+      </div>
+      <Footer/>
     </div>
   );
 }
