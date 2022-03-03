@@ -1,5 +1,6 @@
 import React from 'react';
 import CardsContainer from '../CardsContainer/CardsContainer';
+import './UI.css';
 
 function UI() {
   return (

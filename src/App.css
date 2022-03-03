@@ -1,6 +1,9 @@
 html, body, button {
   font-family: 'Roboto', sans-serif;
 }
+* > {
+  box-sizing: border-box;
+}
 .content-container {
   display: flex;
   flex-direction: column;
@@ -8,4 +11,6 @@ html, body, button {
 }
 .content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
