@@ -4,28 +4,20 @@ import './CardsContainer.css';
 
 function CardsContainer(props) {
 
-  // const [{
-  //   c1Image,
-  //   c1Title,
-  //   c2Image,
-  //   c2Title,
-  //   c3
-  // }, setState] = useState({
-
-  // })
+  const {pests, onClick} = props;
 
   return (
     <div className='cards-container'>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+      <Card pest={pests[0]} onClick={onClick}/>
+      <Card pest={pests[1]} onClick={onClick}/>
+      <Card pest={pests[2]} onClick={onClick}/>
+      <Card pest={pests[3]} onClick={onClick}/>
+      <Card pest={pests[4]} onClick={onClick}/>
+      <Card pest={pests[5]} onClick={onClick}/>
+      <Card pest={pests[6]} onClick={onClick}/>
+      <Card pest={pests[7]} onClick={onClick}/>
+      <Card pest={pests[8]} onClick={onClick}/>
+      <Card pest={pests[9]} onClick={onClick}/>
     </div>
   )
 }

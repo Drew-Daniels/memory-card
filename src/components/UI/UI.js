@@ -2,11 +2,10 @@ import React from 'react';
 import CardsContainer from '../CardsContainer/CardsContainer';
 import './UI.css';
 
-function UI() {
+function UI(props) {
   return (
     <div className='ui'>
-      {/* Current Score, Best Score here */}
-      <CardsContainer />
+      <CardsContainer pests={props.pests} onClick={props.onClick}/>
     </div>
   )
 }
