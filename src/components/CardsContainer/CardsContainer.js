@@ -2,20 +2,20 @@ import Card from '../Card/Card';
 import './CardsContainer.css';
 
 function CardsContainer(props) {
-  const {pests, shuffle} = props;
+  const {pests, clickHandler, ctHits} = props;
 
   return (
     <div className='cards-container'>
-      <Card pest={pests[0]} shuffle={shuffle}/>
-      <Card pest={pests[1]} shuffle={shuffle}/>
-      <Card pest={pests[2]} shuffle={shuffle}/>
-      <Card pest={pests[3]} shuffle={shuffle}/>
-      <Card pest={pests[4]} shuffle={shuffle}/>
-      <Card pest={pests[5]} shuffle={shuffle}/>
-      <Card pest={pests[6]} shuffle={shuffle}/>
-      <Card pest={pests[7]} shuffle={shuffle}/>
-      <Card pest={pests[8]} shuffle={shuffle}/>
-      <Card pest={pests[9]} shuffle={shuffle}/>
+      <Card pest={pests[0]} clickHandler={clickHandler} ctHits={ctHits}/>
+      <Card pest={pests[1]} clickHandler={clickHandler}/>
+      <Card pest={pests[2]} clickHandler={clickHandler}/>
+      <Card pest={pests[3]} clickHandler={clickHandler}/>
+      <Card pest={pests[4]} clickHandler={clickHandler}/>
+      <Card pest={pests[5]} clickHandler={clickHandler}/>
+      <Card pest={pests[6]} clickHandler={clickHandler}/>
+      <Card pest={pests[7]} clickHandler={clickHandler}/>
+      <Card pest={pests[8]} clickHandler={clickHandler}/>
+      <Card pest={pests[9]} clickHandler={clickHandler}/>
     </div>
   )
 }

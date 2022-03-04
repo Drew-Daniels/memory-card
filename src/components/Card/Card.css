@@ -10,9 +10,22 @@
   border: 1px solid black;
   border-radius: .5em;
 }
+.card > * {
+  pointer-events: none;
+}
+.card-image-container, .card-title-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 .card-image {
-
+  display: flex;
+  width: 60%;
 }
 .card-title {
-
+  flex-grow: 1;
+  margin-right: 0;
+  text-align: center;
 }
