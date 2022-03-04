@@ -1,5 +1,5 @@
 // framework
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import uniqid from 'uniqid';
 
 // components
@@ -48,10 +48,17 @@ function App() {
   const [pests, setPests] = useState(getDeepCopy(pestsArr));
   const [score, setScore] = useState(0);
   const [record, setRecord] = useState(0);
+
+  const incrementScore = () => {
+    setScore(score + 1);
+  };
   
+  const resetScore = () => {
+    setScore(0);
+  }
+
   const restoreDefaultPests = () => {
     setPests(getDeepCopy(pestsArr));
-    return pests;
   };
 
   function getDeepCopy(arr) {
@@ -88,25 +95,24 @@ function App() {
     const i = getIndexFromID(id, arr)
     return arr[i];
   }
-  const hit = (pestID) => {
-    const p = getItemFromID(pestID, pests);
-    // if pest has been hit, reset score to 0 and reset pests to default array
-    if (p.isHit) {
-      shuffle(restoreDefaultPests());
-      setScore(0);
-    // if pest not hit, update isHit and update pests array
-    } else {
-      p.isHit = true;
-      setPests([...pests]);
-    }
+  const hit = (pest) => {
+    pest.isHit = true;
   };
 
   const onClick = (event) => {
-    console.log(event.target)
     const pestID = event.target.id;
-    hit(pestID);
+    const pest = getItemFromID(pestID, pests);
+    if (!pest.isHit) {
+      hit(pest);
+      incrementScore();
+      if ((score % 10) === 0) {
+        restoreDefaultPests();
+      }
+    } else {
+      restoreDefaultPests();
+      resetScore();
+    }
     setPests(shuffle(pests));
-    setScore(ctHits(pests));
     if (score > record) {setRecord(score)};
   };
 

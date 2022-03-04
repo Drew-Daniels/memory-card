@@ -5,7 +5,7 @@ function ScoreContainer(props) {
   return (
     <div className='score-container'>
       <h1 className='record-header'>Record:
-        <span className='score-value'>{record}</span>
+        <span className='record-value'>{record}</span>
       </h1>
       <h1 className='score-header'>Score:
         <span className='score-value'>{score}</span>
