@@ -12,7 +12,7 @@
     "react-scripts": "5.0.0",
     "uniqid": "^5.4.0"
   },
-  "homepage": "https://Drew-Daniels.github.io/memory-card",
+  "homepage": "https://Drew-Daniels.github.io/memory-card/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
