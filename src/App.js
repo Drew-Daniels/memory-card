@@ -30,19 +30,6 @@ function App() {
     hit: false,
   });
 
-  // const pests = [
-  //   Pest(AntImage, 'Ant'),
-  //   Pest(BatImage, 'Bat'),
-  //   Pest(BedBugImage, 'Bed Bug'),
-  //   Pest(CaterpillarImage, 'Caterpillar'),
-  //   Pest(CockroachImage, 'Cockroach'),
-  //   Pest(FlyImage, 'Fly'),
-  //   Pest(MosquitoImage, 'Mosquito'),
-  //   Pest(RatImage, 'Rat'),
-  //   Pest(SpiderImage, 'Spider'),
-  //   Pest(WaspImage, 'Wasp'),
-  // ]
-
   const [pests, setPests] = useState([
     Pest(AntImage, 'Ant'),
     Pest(BatImage, 'Bat'),
@@ -56,31 +43,28 @@ function App() {
     Pest(WaspImage, 'Wasp'),
   ]);
 
+  useEffect(() => {
+
+  })
+
   const shuffle = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    return arr;
+    return [...arr];
   };
 
-  const ShufflePests = () => {
-    console.log(pests);
-    return shuffle(pests);
-  }
-
   const onClick = () => {
-    setPests(prevState => (
-      {...prevState,
-        pests: ShufflePests(pests),
-      }));
+    setPests(shuffle(pests));
+    console.log(pests);
   }
   return (
     <div className='App content-container'>
       <div className='content'>
         <Header/>
         <ScoreContainer />
-        <UI pests={pests} onClick={onClick}/>
+        <UI pests={pests} shuffle={onClick}/>
       </div>
       <Footer/>
     </div>

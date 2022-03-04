@@ -1,4 +1,3 @@
-import React from 'react';
 import './ScoreContainer.css';
 
 function ScoreContainer() {
