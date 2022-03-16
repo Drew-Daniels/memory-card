@@ -4,6 +4,7 @@
   align-items: center;
   height: 5em;
   padding: 1em 0;
+  color: white;
 }
 .github-profile-container {
   display: flex;
@@ -14,4 +15,12 @@
 }
 .github-icon {
   height: 2em;
+  transition: transform .5s ease-in-out;
+}
+.github-icon:hover {
+  transform: rotate(360deg);
+}
+@keyframes spin {
+  0%  {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}
 }

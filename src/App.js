@@ -114,6 +114,17 @@ function App() {
     }
     setPests(shuffle(pests));
     if (score > record) {setRecord(score)};
+    //shake
+    const icon = document.querySelector('.header-icon');
+    const headerText = document.querySelector('.header-text');
+    setTimeout(() => {
+      icon.classList.add('shake');
+      headerText.classList.add('shake');
+      setTimeout(() => {
+        icon.classList.remove('shake');
+        headerText.classList.remove('shake');
+      }, 300)
+    }, 100)
   };
 
   return (
