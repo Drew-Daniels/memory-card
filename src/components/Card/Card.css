@@ -14,7 +14,7 @@
   pointer-events: none;
 }
 .card:hover {
-  padding: 1em;
+  padding: .25em;
 }
 .card-image-container {
   display: flex;
