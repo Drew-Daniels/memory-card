@@ -1,8 +1,10 @@
 import './Card.css';
 
 function Card(props) {
+
   const {pest, clickHandler} = props;
   const {img, title, id} = pest;
+
   return (
     <div id={id} className='card' onClick={clickHandler}>
       <div className='card-image-container'>
