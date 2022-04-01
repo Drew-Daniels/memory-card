@@ -13,9 +13,6 @@
 .card > * {
   pointer-events: none;
 }
-.card:hover {
-  padding: .25em;
-}
 .card-image-container {
   display: flex;
   flex-grow: 1;
