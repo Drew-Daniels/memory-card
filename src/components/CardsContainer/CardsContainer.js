@@ -1,5 +1,5 @@
 import uniqid from 'uniqid';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import './CardsContainer.css';
 
@@ -89,6 +89,13 @@ function CardsContainer(props) {
       return shuffle(prevPests);
     })
   }
+
+
+  useEffect(() => {
+    if (score > record) {
+      setRecord(score)
+    }
+  })
 
   return (
     <div className='cards-container'>
