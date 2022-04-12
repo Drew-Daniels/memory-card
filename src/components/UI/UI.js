@@ -2,10 +2,10 @@ import CardsContainer from '../CardsContainer/CardsContainer';
 import './UI.css';
 
 function UI(props) {
-  const {score, setScore, record, setRecord} = props;
+  const {score, setScore} = props;
   return (
     <div className='ui'>
-      <CardsContainer score={score} setScore={setScore} record={record} setRecord={setRecord} />
+      <CardsContainer score={score} setScore={setScore} />
     </div>
   )
 }

@@ -14,14 +14,13 @@ import './App.css';
 function App() {
 
   const [score, setScore] = useState(0);
-  const [record, setRecord] = useState(0);
 
   return (
     <div className='App content-container'>
       <div className='content'>
         <Header/>
-        <ScoreContainer score={score} record={record} />
-        <UI score={score} setScore={setScore} record={record} setRecord={setRecord} />
+        <ScoreContainer score={score} />
+        <UI score={score} setScore={setScore} />
       </div>
       <Footer/>
     </div>

@@ -17,7 +17,7 @@ import WaspImage from '../../images/pictures/wasp.png'
 
 function CardsContainer(props) {
 
-  const {score, setScore, record, setRecord} = props;
+  const {score, setScore} = props;
 
   const Pest = (img, title, isHit=false) => ({
     img,
@@ -61,11 +61,7 @@ function CardsContainer(props) {
       }
       return newArr;
     };
-  // NOTE: Must use function expressions when resetting pests state (twice in a row) because if you set this way
-  // setPests(shuffle(pests)), that will pull 'pests' from the scope in which this function was originally called - 
-  // meaning that if you call setPests twice in this function (like is done here) that means that whenever you directly use the
-  // 'pests' reference, that will only refer to what it was at the time the function was called
-  // However, by using function expressions, this the reference to pests is kept current with state
+
   function clickHandler(e) {
     const pestID = e.target.id;
     const pest = pests.find(pest => pest.id === pestID);
@@ -92,23 +88,25 @@ function CardsContainer(props) {
 
 
   useEffect(() => {
+    const recordEl = document.getElementById('record-value');
+    const record = parseInt(recordEl.innerHTML);
     if (score > record) {
-      setRecord(score)
+      recordEl.innerHTML = score;
     }
   })
 
   return (
     <div className='cards-container'>
-      <Card pest={pests[0]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[1]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[2]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[3]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[4]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[5]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[6]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[7]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[8]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
-      <Card pest={pests[9]} setPests={setPests} score={score} setScore={setScore} record={record} setRecord={setRecord} clickHandler={clickHandler} />
+      <Card pest={pests[0]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[1]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[2]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[3]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[4]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[5]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[6]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[7]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[8]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
+      <Card pest={pests[9]} setPests={setPests} score={score} setScore={setScore} clickHandler={clickHandler} />
     </div>
   )
 }

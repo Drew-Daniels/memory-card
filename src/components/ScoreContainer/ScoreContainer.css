@@ -9,7 +9,7 @@
 .record-header {
   margin-bottom: 1em;
 }
-.record-value {
+#record-value {
   margin-left: .5em;
 }
 .score-value {
