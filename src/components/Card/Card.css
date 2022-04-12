@@ -1,19 +1,19 @@
 .card {
-  width: 10em;
-  height: 10em;
-  background-color: blue;
+  width: 8em;
+  height: 8em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1em;
-  border: 1px solid black;
+  border: 1px solid rgb(233, 232, 232);
   border-radius: .5em;
+  transition: padding .3s ease-in-out;
 }
 .card > * {
   pointer-events: none;
 }
-.card-image-container, .card-title-container {
+.card-image-container {
   display: flex;
   flex-grow: 1;
   justify-content: center;
@@ -23,9 +23,4 @@
 .card-image {
   display: flex;
   width: 60%;
-}
-.card-title {
-  flex-grow: 1;
-  margin-right: 0;
-  text-align: center;
 }
